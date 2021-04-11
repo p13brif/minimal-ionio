@@ -1,5 +1,6 @@
 .ionio-footer {
     display: flex; 
+    overflow: hidden;
     flex-direction: column;
     justify-content: space-between;
     
@@ -14,18 +15,48 @@
     list-style: none;
 
     &__item {
-        display: block; 
-
+        display: block;
+        float: none;
     }
+    
 
     &__link {
         color: white;
         text-transform: none;
         font-size: 1em;
         font-weight: normal;
-
+	
         &--bold {
             font-weight: bold;
         }
     }
+    
 }
+
+
+@media only screen and (max-width:600px){
+
+	.ionio-footer-list__link--bold:hover{
+		text-decoration: none;
+	}
+
+	.ionio-footer-list__item{
+		display: none;
+	}
+
+	.ionio-footer-list__link{
+		display: none;
+	}
+
+	.ionio-footer-list:hover .ionio-footer-list__link{
+		display: block
+	}
+
+	.ionio-footer-list:hover .ionio-footer-list__item{
+		display: block
+	}
+	
+}
+
+
+
